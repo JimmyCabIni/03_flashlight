@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {flash} from "ionicons/icons";
+import { CapacitorFlash} from "@capgo/capacitor-flash";
 
 @Component({
   selector: 'app-home',
@@ -15,6 +15,12 @@ export class HomePage {
   }
 
   flash() {
+    this.active = !this.active;
 
+    if (this.active) {
+      CapacitorFlash.switchOn({ intensity: 100 });
+    }else {
+      CapacitorFlash.switchOff();
+    }
   }
 }
